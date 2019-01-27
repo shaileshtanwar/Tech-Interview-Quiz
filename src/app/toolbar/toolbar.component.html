@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>Interview Quiz</h1>
+    <div class="right">
+      <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)">Dark theme</mat-slide-toggle>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
