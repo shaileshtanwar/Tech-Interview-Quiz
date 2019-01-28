@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TileComponent implements OnInit {
 
   constructor() { }
-
+  public imgPaths: string[];
   ngOnInit() {
   }
 
