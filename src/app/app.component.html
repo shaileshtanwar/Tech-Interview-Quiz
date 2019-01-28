@@ -1,8 +1,8 @@
-<div [ngClass]="{'dark-theme': isDarkTheme | async}">
-  <div class="mat-app-background">
-    <app-toolbar></app-toolbar>
-    <div class="content">
-      <!-- <app-tile>Test</app-tile> -->
-    </div>
-  </div>
-</div>
+<app-toolbar></app-toolbar>
+<!-- <mat-sidenav-container class="example-container" *ngIf="true">
+  <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
+  <mat-sidenav-content>Main content</mat-sidenav-content>
+</mat-sidenav-container> -->
+<main>
+  <router-outlet  style="margin-top: 80px;"></router-outlet>
+</main>
