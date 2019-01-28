@@ -6,19 +6,23 @@ import { TileComponent } from 'src/app/tile/tile.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ToolbarModule } from 'src/app/toolbar/toolbar.module';
 import { CoreModule } from 'src/app/core/core.module';
+import { MaterialModule } from 'src/app/material.module';
+import { HomeComponent } from 'src/app/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TileComponent
+    TileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ToolbarModule,
-    CoreModule
+    CoreModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
