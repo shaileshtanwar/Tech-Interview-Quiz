@@ -11,13 +11,16 @@ import { CoreModule } from 'src/app/core/core.module';
 import { MaterialModule } from 'src/app/material.module';
 import { HomeComponent } from 'src/app/home/home.component';
 import { TileService } from 'src/app/tile/tile.service';
+import { QuizComponent } from './quiz/quiz.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TileComponent,
-    HomeComponent
+    HomeComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,9 @@ import { TileService } from 'src/app/tile/tile.service';
     BrowserAnimationsModule,
     ToolbarModule,
     CoreModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
+
   ],
   providers: [TileService],
   bootstrap: [AppComponent]
