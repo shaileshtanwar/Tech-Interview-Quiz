@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Angular",
+        "imgURL": "angular-logo.png",
+        "description": "Angular is a TypeScript-based open-source front-end web application framework led by the Angular Team at Google."
+    },
+    {
+        "title": "Java",
+        "imgURL": "java.jpeg",
+        "description": "Java is an object-oriented, cross platform, multi-purpose programming language produced by Sun Microsystems."
+    }
+]
