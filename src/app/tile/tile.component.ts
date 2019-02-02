@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TileService } from 'src/app/tile/tile.service';
 
 @Component({
   selector: 'app-tile',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TileComponent implements OnInit {
 
-  constructor() { }
-  public imgPaths: string[];
+  constructor(private tileService: TileService) { }
+  public tileInfo: TileInfoVM[];
   ngOnInit() {
+    this.tileService.getTileData().subscribe((tileData: TileInfoVM[]) => {
+      this.tileInfo = tileData;
+      console.log(this.tileInfo);
+    });
   }
 
+
 }
+
+export interface TileInfoVM {
+  title: string;
+  imgURl: string;
+  description: string;
+}
+
