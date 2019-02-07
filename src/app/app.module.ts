@@ -13,6 +13,7 @@ import { HomeComponent } from 'src/app/home/home.component';
 import { TileService } from 'src/app/tile/tile.service';
 import { QuizComponent } from './quiz/quiz.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from 'src/app/login/login.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     TileComponent,
     HomeComponent,
-    QuizComponent
+    QuizComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     MaterialModule,
     ReactiveFormsModule
-
   ],
   providers: [TileService],
   bootstrap: [AppComponent]
