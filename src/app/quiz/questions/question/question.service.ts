@@ -7,10 +7,15 @@ import { QuestionVM } from 'src/app/quiz/questions/question/question.component';
   providedIn: 'root'
 })
 export class QuestionService {
-  public baseURL = 'assets/java.json';
+  public javaURL = 'assets/java.json';
+  public angularURL = 'assets/angular.json';
   constructor(private http: HttpClient) {
   }
-  public getQuestionData(): Observable<QuestionVM[]> {
-    return this.http.get<QuestionVM[]>(this.baseURL);
+  public getQuestionData(topic: string): Observable<QuestionVM[]> {
+    if (topic == 'Angular') {
+      return this.http.get<QuestionVM[]>(this.angularURL);
+    } else if (topic == 'Java') {
+      return this.http.get<QuestionVM[]>(this.javaURL);
+    }
   }
 }
