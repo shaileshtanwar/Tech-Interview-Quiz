@@ -14,6 +14,7 @@ import { TileService } from 'src/app/tile/tile.service';
 import { QuizComponent } from './quiz/quiz.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from 'src/app/login/login.component';
+import { QuestionComponent } from 'src/app/quiz/questions/question/question.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { LoginComponent } from 'src/app/login/login.component';
     TileComponent,
     HomeComponent,
     QuizComponent,
-    LoginComponent
+    LoginComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
