@@ -1,0 +1,32 @@
+[
+    {
+        "question": "Angular",
+        "answer": "1",
+        "options":[
+            {"op": "A"},
+            {"op": "B"},
+            {"op": "C"},
+            {"op": "D"}
+        ]
+    },
+    {
+        "question": "Angular",
+        "answer": "1",
+        "options":[
+            {"op": "A"},
+            {"op": "B"},
+            {"op": "C"},
+            {"op": "D"}
+        ]
+    },
+    {
+        "question": "Angular",
+        "answer": "1",
+        "options":[
+            {"op": "A"},
+            {"op": "B"},
+            {"op": "C"},
+            {"op": "D"}
+        ] 
+    }
+]
