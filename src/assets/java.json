@@ -1,6 +1,6 @@
 [
     {
-        "question": "Angular",
+        "question": "Java",
         "answer": "1",
         "options":[
             {"op": "A"},
@@ -10,7 +10,7 @@
         ]
     },
     {
-        "question": "Angular",
+        "question": "Java",
         "answer": "1",
         "options":[
             {"op": "A"},
@@ -20,7 +20,7 @@
         ]
     },
     {
-        "question": "Angular",
+        "question": "Java",
         "answer": "1",
         "options":[
             {"op": "A"},
