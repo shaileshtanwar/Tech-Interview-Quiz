@@ -3,30 +3,30 @@
         "question": "Java",
         "answer": "1",
         "options":[
-            {"op": "A"},
-            {"op": "B"},
-            {"op": "C"},
-            {"op": "D"}
+            {"A": "A"},
+            {"B": "B"},
+            {"C": "C"},
+            {"D": "D"}
         ]
     },
     {
         "question": "Java",
         "answer": "1",
         "options":[
-            {"op": "A"},
-            {"op": "B"},
-            {"op": "C"},
-            {"op": "D"}
+            {"A": "A"},
+            {"B": "B"},
+            {"C": "C"},
+            {"D": "D"}
         ]
     },
     {
         "question": "Java",
         "answer": "1",
         "options":[
-            {"op": "A"},
-            {"op": "B"},
-            {"op": "C"},
-            {"op": "D"}
+            {"A": "A"},
+            {"B": "B"},
+            {"C": "C"},
+            {"D": "D"}
         ] 
     }
 ]
