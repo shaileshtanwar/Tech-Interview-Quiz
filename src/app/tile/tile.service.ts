@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TileService {
   public baseURL = 'assets/tiles.json';
+  public quiztopic = undefined;
   constructor(private http: HttpClient) {
   }
   public getTileData(): Observable<TileInfoVM[]> {

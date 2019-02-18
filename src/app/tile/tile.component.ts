@@ -17,6 +17,10 @@ export class TileComponent implements OnInit {
     });
   }
 
+  public startQuiz(topic: string) {
+    this.tileService.quiztopic = topic;
+  }
+
 
 }
 
