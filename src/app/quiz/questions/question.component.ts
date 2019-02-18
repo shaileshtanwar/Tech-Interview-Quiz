@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionService } from 'src/app/quiz/questions/question/question.service';
+import { QuestionService } from 'src/app/quiz/questions/question.service';
 import { Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-question',
@@ -10,7 +11,8 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 })
 export class QuestionComponent implements OnInit {
 
-  constructor(private questionService: QuestionService, private formBuilder: FormBuilder) { }
+  constructor(private questionService: QuestionService, private formBuilder: FormBuilder, private router: Router) { }
+
   public questions: QuestionVM[];
   public questionIndex: number = 0;
   public totalQuestion: number = 3;
@@ -38,8 +40,12 @@ export class QuestionComponent implements OnInit {
     });
   }
 
-  public nextQuestion() {
+  public nextQuestion(): void {
     this.questionIndex++;
+  }
+
+  public submitQuiz(): void {
+    this.router.navigate(['/review']);
   }
 
 }

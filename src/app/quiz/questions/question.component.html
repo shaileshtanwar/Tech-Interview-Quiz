@@ -26,6 +26,7 @@
       </div>
       </div>
       <button *ngIf="i < totalQuestion-1" mat-raised-button class="next-button" color="warn" (click)="nextQuestion()">Next</button>
+      <button *ngIf="i == totalQuestion-1" mat-raised-button class="next-button" color="warn" (click)="submitQuiz()">Submit</button>
     </div>
   </div>
 </div>

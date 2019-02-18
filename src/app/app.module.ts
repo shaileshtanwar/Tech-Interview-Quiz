@@ -14,7 +14,9 @@ import { TileService } from 'src/app/tile/tile.service';
 import { QuizComponent } from './quiz/quiz.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from 'src/app/login/login.component';
-import { QuestionComponent } from 'src/app/quiz/questions/question/question.component';
+import { QuestionComponent } from 'src/app/quiz/questions/question.component';
+import { ResultComponent } from 'src/app/quiz/result/result.component';
+import { ReviewComponent } from 'src/app/quiz/review/review.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { QuestionComponent } from 'src/app/quiz/questions/question/question.comp
     HomeComponent,
     QuizComponent,
     LoginComponent,
-    QuestionComponent
+    QuestionComponent,
+    ResultComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
