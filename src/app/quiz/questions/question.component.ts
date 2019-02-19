@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { QuestionService } from 'src/app/quiz/questions/question.service';
-import { Input } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
+import { QuizService } from 'src/app/quiz/quiz.service';
 
 @Component({
   selector: 'app-question',
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class QuestionComponent implements OnInit {
 
-  constructor(private questionService: QuestionService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private quizService: QuizService, private formBuilder: FormBuilder, private router: Router) { }
 
   public questions: QuestionVM[];
   public questionIndex: number = 0;
@@ -19,33 +18,25 @@ export class QuestionComponent implements OnInit {
   public optionFormGroup: FormGroup;
   @Input() topic: string;
   ngOnInit() {
-    this.questionService.getQuestionData(this.topic).subscribe((questionsData: QuestionVM[]) => {
+    this.quizService.getQuestionData(this.topic).subscribe((questionsData: QuestionVM[]) => {
       this.questions = questionsData;
-      console.log(this.questions);
+      this.totalQuestion = questionsData.length;
+      this.quizService.totalQuestion = this.totalQuestion;
+      this.quizService.questions = questionsData;
+      // console.log(this.questions);
     });
-    this.optionFormGroup = this.formBuilder.group({
-      optionsArray: this.formBuilder.array([])
-    });
-    for (var i = 0; i < this.totalQuestion; i++) {
-      (<FormArray>this.optionFormGroup.get('optionsArray')).push(this.createOptions());
-    }
-  }
+    this.optionFormGroup = this.quizService.optionFormGroup;
 
-  createOptions(): FormGroup {
-    return this.formBuilder.group({
-      op1: false,
-      op2: false,
-      op3: false,
-      op4: false
-    });
+  }
+  public submitQuiz(): void {
+    console.log(JSON.stringify(this.optionFormGroup.value));
+    this.quizService.optionFormGroup = this.optionFormGroup;
+    console.log(JSON.stringify(this.quizService.optionFormGroup.value));
+    this.router.navigate(['/review']);
   }
 
   public nextQuestion(): void {
     this.questionIndex++;
-  }
-
-  public submitQuiz(): void {
-    this.router.navigate(['/review']);
   }
 
 }
