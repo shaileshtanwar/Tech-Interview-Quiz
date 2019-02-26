@@ -1,32 +1,524 @@
 [
     {
-        "question": "Angular",
-        "answer": "1",
-        "options":[
-            {"A": "A"},
-            {"B": "B"},
-            {"C": "C"},
-            {"D": "D"}
+        "question": "In Angular, you can pass data from parent component to child component using...",
+        "answer": "B",
+        "options": [
+            {
+                "A": "@Output()"
+            },
+            {
+                "B": "@Input()"
+            },
+            {
+                "C": "Input"
+            },
+            {
+                "D": "Output"
+            }
         ]
     },
     {
-        "question": "Angular",
-        "answer": "1",
-        "options":[
-            {"A": "A"},
-            {"B": "B"},
-            {"C": "C"},
-            {"D": "D"}
+        "question": "In Angular, you can pass data from child component to parent component using",
+        "answer": "A",
+        "options": [
+            {
+                "A": "@Output()"
+            },
+            {
+                "B": "@Input()"
+            },
+            {
+                "C": "Input"
+            },
+            {
+                "D": "Output"
+            }
         ]
     },
     {
-        "question": "Angular",
+        "question": "You can create local HTML reference of HTML tag using variable which starts with character?",
         "answer": "1",
-        "options":[
-            {"A": "A"},
-            {"B": "B"},
-            {"C": "C"},
-            {"D": "D"}
-        ] 
+        "options": [
+            {
+                "A": "@"
+            },
+            {
+                "B": "#"
+            },
+            {
+                "C": "*"
+            },
+            {
+                "D": "&"
+            }
+        ]
+    },
+    {
+        "question": "A directive which modifies DOM hierarchy is called?",
+        "answer": "A",
+        "options": [
+            {
+                "A": "Structural directive"
+            },
+            {
+                "B": "Attribute directive"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "Select correct form control class name which is set to true via [(ngModel)] whenever value is modified?",
+        "answer": "D",
+        "options": [
+            {
+                "A": "ng-invalid"
+            },
+            {
+                "B": "ng-pending"
+            },
+            {
+                "C": "ng-pristine"
+            },
+            {
+                "D": "ng-dirty"
+            }
+        ]
+    },
+    {
+        "question": "If you provide a custom service in two components’ “providers” section of @Component decorator, how many instances of service shall get created?",
+        "answer": "B",
+        "options": [
+            {
+                "A": "1"
+            },
+            {
+                "B": "2"
+            },
+            {
+                "C": "3"
+            },
+            {
+                "D": "4"
+            }
+        ]
+    },
+    {
+        "question": "Custom pipe can modify actual value of variable apart from different presention in HTML.",
+        "answer": "B",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "In Angular routing, below tag is used to render matched component via active route.",
+        "answer": "C",
+        "options": [
+            {
+                "A": "<router></router>"
+            },
+            {
+                "B": "<router-output></router-output>"
+            },
+            {
+                "C": "<router-outlet></router-outlet>"
+            },
+            {
+                "D": "<router-display></router-display>"
+            }
+        ]
+    },
+    {
+        "question": "We need to call below method of RouterModule for providing all routes in AppModule",
+        "answer": "B",
+        "options": [
+            {
+                "A": "RouterModule.forChild"
+            },
+            {
+                "B": "RouterModule.forRoot"
+            },
+            {
+                "C": "RouterModule"
+            },
+            {
+                "D": "RouterModule.import"
+            }
+        ]
+    },
+    {
+        "question": "Async Pipe subscribes to observer and update expression whenever there is data sent from observer",
+        "answer": "A",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "Below command is used to run Static Code analysis of Angular application?",
+        "answer": "1",
+        "options": [
+            {
+                "A": "ng build"
+            },
+            {
+                "B": "ng profile"
+            },
+            {
+                "C": "ng lint"
+            },
+            {
+                "D": "ng serve"
+            }
+        ]
+    },
+    {
+        "question": "Router service needs to be explicitly provided in angular module to use it in other component via DI",
+        "answer": "B",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "We can chain multiple pipe in a single expression along with “async” pipe",
+        "answer": "A",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "Below component represent “target/host” DOM element inside Directive’s constructor",
+        "answer": "B",
+        "options": [
+            {
+                "A": "Element"
+            },
+            {
+                "B": "ElementRef"
+            },
+            {
+                "C": "Host"
+            },
+            {
+                "D": "Target"
+            }
+        ]
+    },
+    {
+        "question": "To build application in production mode, use below command",
+        "answer": "C",
+        "options": [
+            {
+                "A": "ng build"
+            },
+            {
+                "B": "ng serve"
+            },
+            {
+                "C": "ng build --prod"
+            },
+            {
+                "D": "ng lint"
+            }
+        ]
+    },
+    {
+        "question": "Directive can listen to host/target events using below decoarator",
+        "answer": "B",
+        "options": [
+            {
+                "A": "@Listener"
+            },
+            {
+                "B": "@HostListener"
+            },
+            {
+                "C": "@OnListener"
+            },
+            {
+                "D": "@TargetListener"
+            }
+        ]
+    },
+    {
+        "question": "Using below wild card we can define page not found route",
+        "answer": "B",
+        "options": [
+            {
+                "A": "*"
+            },
+            {
+                "B": "**"
+            },
+            {
+                "C": "404"
+            },
+            {
+                "D": "^"
+            }
+        ]
+    },
+    {
+        "question": "There can be more than one <router-outlet> element in angular application",
+        "answer": "A",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "Below service can be used to extract route parameters inside component",
+        "answer": "C",
+        "options": [
+            {
+                "A": "Router"
+            },
+            {
+                "B": "Route"
+            },
+            {
+                "C": "ActivatedRoute"
+            },
+            {
+                "D": "CurrentRoute"
+            }
+        ]
+    },
+    {
+        "question": "HTTP service’s get/put/post/delete function returns",
+        "answer": "B",
+        "options": [
+            {
+                "A": "object of type “any”"
+            },
+            {
+                "B": "Observable"
+            },
+            {
+                "C": "Json data"
+            },
+            {
+                "D": "callback function"
+            }
+        ]
+    },
+    {
+        "question": "In AOT compilation mode, browser gets angular compiler along with website content",
+        "answer": "B",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "Observer sends data to multiple clients via below method",
+        "answer": "B",
+        "options": [
+            {
+                "A": "send()"
+            },
+            {
+                "B": "next()"
+            },
+            {
+                "C": "emit()"
+            },
+            {
+                "D": "publish()"
+            }
+        ]
+    },
+    {
+        "question": "By default, component’s change detection strategy is set to",
+        "answer": "B",
+        "options": [
+            {
+                "A": "OnPush"
+            },
+            {
+                "B": "Default"
+            },
+            {
+                "C": "Reactive"
+            },
+            {
+                "D": "OnPull"
+            }
+        ]
+    },
+    {
+        "question": "One component can be declared inside more than one NgModule",
+        "answer": "B",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "To use HttpClient component you need to import below module",
+        "answer": "B",
+        "options": [
+            {
+                "A": "HttpModule"
+            },
+            {
+                "B": "HttpClientModule"
+            },
+            {
+                "C": "Http"
+            },
+            {
+                "D": "None of the above"
+            }
+        ]
+    },
+    {
+        "question": "Below pseudo class represent void => * animation state",
+        "answer": "A",
+        "options": [
+            {
+                "A": ":enter"
+            },
+            {
+                "B": ":leave"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "HTTP service is called event if observer doesn’t have “subscribe” method",
+        "answer": "B",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "false"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
+    },
+    {
+        "question": "A component can have child route defined using below property",
+        "answer": "B",
+        "options": [
+            {
+                "A": "routes"
+            },
+            {
+                "B": "children"
+            },
+            {
+                "C": "routeCollection"
+            },
+            {
+                "D": "None of the above"
+            }
+        ]
+    },
+    {
+        "question": "OnPush is faster in performance than Default change detection strategy",
+        "answer": "A",
+        "options": [
+            {
+                "A": "True"
+            },
+            {
+                "B": "False"
+            },
+            {
+                "C": null
+            },
+            {
+                "D": null
+            }
+        ]
     }
 ]

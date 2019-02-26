@@ -24,9 +24,9 @@ export class QuestionComponent implements OnInit {
       this.quizService.totalQuestion = this.totalQuestion;
       this.quizService.questions = questionsData;
       // console.log(this.questions);
-    });
+      this.quizService.buildOptionForm();
     this.optionFormGroup = this.quizService.optionFormGroup;
-
+    });
   }
   public submitQuiz(): void {
     console.log(JSON.stringify(this.optionFormGroup.value));

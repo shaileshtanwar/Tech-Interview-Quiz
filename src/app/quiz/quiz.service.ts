@@ -17,9 +17,6 @@ export class QuizService {
     this.optionFormGroup = this.formBuilder.group({
       optionsArray: this.formBuilder.array([])
     });
-    for (var i = 0; i < this.totalQuestion; i++) {
-      (<FormArray>this.optionFormGroup.get('optionsArray')).push(this.createOptions());
-    }
   }
 
   createOptions(): FormGroup {
@@ -36,6 +33,12 @@ export class QuizService {
       return this.http.get<QuestionVM[]>(this.angularURL);
     } else if (topic == 'Java') {
       return this.http.get<QuestionVM[]>(this.javaURL);
+    }
+  }
+
+  public buildOptionForm(){
+    for (var i = 0; i < this.totalQuestion; i++) {
+      (<FormArray>this.optionFormGroup.get('optionsArray')).push(this.createOptions());
     }
   }
 }

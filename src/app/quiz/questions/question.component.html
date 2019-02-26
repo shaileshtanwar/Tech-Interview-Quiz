@@ -13,13 +13,13 @@
         <div formArrayName="optionsArray" *ngFor="let option of optionFormGroup.get('optionsArray').controls; let y = index;">
           <div [formGroupName]="y" *ngIf="i==y">
             <!-- <div *ngFor="let option of question.options; let j=index"> -->
-            <mat-checkbox formControlName="op1" class="example-margin">{{question.options[0].A}}</mat-checkbox>
+            <mat-checkbox *ngIf="!!question.options[0].A" formControlName="op1" class="example-margin">{{question.options[0].A}}</mat-checkbox>
             <br>
-            <mat-checkbox formControlName="op2" class="example-margin">{{question.options[1].B}}</mat-checkbox>
+            <mat-checkbox *ngIf="!!question.options[1].B" formControlName="op2" class="example-margin">{{question.options[1].B}}</mat-checkbox>
             <br>
-            <mat-checkbox formControlName="op3" class="example-margin">{{question.options[2].C}}</mat-checkbox>
+            <mat-checkbox *ngIf="!!question.options[2].C" formControlName="op3" class="example-margin">{{question.options[2].C}}</mat-checkbox>
             <br>
-            <mat-checkbox formControlName="op4" class="example-margin">{{question.options[3].D}}</mat-checkbox>
+            <mat-checkbox *ngIf="!!question.options[3].D" formControlName="op4" class="example-margin">{{question.options[3].D}}</mat-checkbox>
             <!-- </div> -->
           </div>
         </div>
