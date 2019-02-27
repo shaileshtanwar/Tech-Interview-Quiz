@@ -1,34 +1,30 @@
 Please Review Your answers:
-<div class="card bg-info text-white" *ngFor="let question of questions; let i=index"  >
-  <div >
-    <div >
-      <div class="container">
-        <h4>
-          <b>Question {{i + 1}}</b>
-        </h4>
-        <p>Out of {{totalQuestion}}</p>
-        Q: {{question.question}}
-        <br> Select your answer from options mentioned below:
-        <br>
-        <div [formGroup]="optionFormGroup">
-        <div formArrayName="optionsArray" *ngFor="let option of optionFormGroup.get('optionsArray').controls; let y = index;">
-          <div [formGroupName]="y" *ngIf="i==y">
-            <!-- <div *ngFor="let option of question.options; let j=index"> -->
-            <mat-checkbox formControlName="op1" class="example-margin">{{question.options[0].A}}</mat-checkbox>
-            <br>
-            <mat-checkbox formControlName="op2" class="example-margin">{{question.options[1].B}}</mat-checkbox>
-            <br>
-            <mat-checkbox formControlName="op3" class="example-margin">{{question.options[2].C}}</mat-checkbox>
-            <br>
-            <mat-checkbox formControlName="op4" class="example-margin">{{question.options[3].D}}</mat-checkbox>
-            <!-- </div> -->
-          </div>
+<div class="card bg-info text-white" *ngFor="let question of questions; let i=index">
+  <div class="container">
+    <h4>
+      <b>Question {{i + 1}}</b>
+    </h4>
+    <p>Out of {{totalQuestion}}</p>
+    Q: {{question.question}}
+    <br> Select your answer from options mentioned below:
+    <br>
+    <div [formGroup]="optionFormGroup">
+      <div formArrayName="optionsArray" *ngFor="let option of optionFormGroup.get('optionsArray').controls; let y = index;">
+        <div [formGroupName]="y" *ngIf="i==y">
+          <!-- <div *ngFor="let option of question.options; let j=index"> -->
+          <mat-checkbox *ngIf="!!question.options[0].A" formControlName="op1" class="example-margin">{{question.options[0].A}}</mat-checkbox>
+          <br>
+          <mat-checkbox *ngIf="!!question.options[1].B" formControlName="op2" class="example-margin">{{question.options[1].B}}</mat-checkbox>
+          <br>
+          <mat-checkbox *ngIf="!!question.options[2].C" formControlName="op3" class="example-margin">{{question.options[2].C}}</mat-checkbox>
+          <br>
+          <mat-checkbox *ngIf="!!question.options[3].D" formControlName="op4" class="example-margin">{{question.options[3].D}}</mat-checkbox>
+          <!-- </div> -->
         </div>
       </div>
-      </div>
-      <!-- <button *ngIf="i < totalQuestion-1" mat-raised-button class="next-button" color="warn" (click)="nextQuestion()">Next</button> -->
     </div>
   </div>
+  <!-- <button *ngIf="i < totalQuestion-1" mat-raised-button class="next-button" color="warn" (click)="nextQuestion()">Next</button> -->
 </div>
 
-<button  mat-raised-button class="next-button" color="warn" (click)="submitQuiz()">Submit</button>
+<button mat-raised-button class="next-button" color="warn" (click)="submitQuiz()">Submit</button>

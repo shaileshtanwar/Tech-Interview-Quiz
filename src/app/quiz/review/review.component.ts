@@ -25,6 +25,20 @@ export class ReviewComponent implements OnInit {
     this.totalQuestion = this.quizService.totalQuestion;
   }
   public submitQuiz(): void {
+    for (let i = 0; i < this.totalQuestion; i++) {
+      if (this.questions[i].answer == 'A' && (<FormArray>this.optionFormGroup.get('optionsArray')).controls[i].get('op1').value) {
+        this.quizService.correctQues++;
+      } else if (this.questions[i].answer == 'B' && (<FormArray>this.optionFormGroup.get('optionsArray')).controls[i].get('op2').value) {
+        this.quizService.correctQues++;
+      } else if (this.questions[i].answer == 'C' && (<FormArray>this.optionFormGroup.get('optionsArray')).controls[i].get('op3').value) {
+        this.quizService.correctQues++;
+      } else if (this.questions[i].answer == 'D' && (<FormArray>this.optionFormGroup.get('optionsArray')).controls[i].get('op4').value) {
+        this.quizService.correctQues++;
+      } else {
+        this.quizService.incorrectQues++;
+      }
+    }
+    console.log(this.quizService.correctQues + " " + this.quizService.incorrectQues + " ")
     this.router.navigate(['/result']);
   }
 }
