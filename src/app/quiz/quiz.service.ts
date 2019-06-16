@@ -15,7 +15,7 @@ export class QuizService {
   public questions: QuestionVM[] = [];
   public correctQues: number = 0;
   public incorrectQues: number = 0;
-  public Score: number = 0;
+  public score: number = 0;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
     this.optionFormGroup = this.formBuilder.group({
       optionsArray: this.formBuilder.array([])
