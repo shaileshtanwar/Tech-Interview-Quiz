@@ -18,7 +18,7 @@ export class QuizComponent implements OnInit {
     this.progressPoints = 100 / this.quizService.totalQuestion;
   }
 
-  public updateProgressBarValue(): void {
+  public updateProgressBarValue(event: any): void {
     this.progressBarValue += this.progressPoints;
   }
 }
