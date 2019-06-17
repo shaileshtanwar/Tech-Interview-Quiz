@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { QuizService } from 'src/app/quiz/quiz.service';
@@ -16,6 +16,7 @@ export class QuestionComponent implements OnInit {
   public questionIndex: number = 0;
   public totalQuestion: number = 3;
   public optionFormGroup: FormGroup;
+  @Output() valueChange = new EventEmitter();
   @Input() topic: string;
   ngOnInit() {
     this.quizService.getQuestionData(this.topic).subscribe((questionsData: QuestionVM[]) => {
@@ -25,18 +26,23 @@ export class QuestionComponent implements OnInit {
       this.quizService.questions = questionsData;
       // console.log(this.questions);
       this.quizService.buildOptionForm();
-    this.optionFormGroup = this.quizService.optionFormGroup;
+      this.optionFormGroup = this.quizService.optionFormGroup;
     });
   }
   public submitQuiz(): void {
-    console.log(JSON.stringify(this.optionFormGroup.value));
+    // console.log(JSON.stringify(this.optionFormGroup.value));
     this.quizService.optionFormGroup = this.optionFormGroup;
-    console.log(JSON.stringify(this.quizService.optionFormGroup.value));
+    // console.log(JSON.stringify(this.quizService.optionFormGroup.value));
     this.router.navigate(['/review']);
   }
 
   public nextQuestion(): void {
     this.questionIndex++;
+    this.progressBarValueChanged();
+  }
+
+  public progressBarValueChanged(): void {
+    this.valueChange.emit("changed");
   }
 
 }
