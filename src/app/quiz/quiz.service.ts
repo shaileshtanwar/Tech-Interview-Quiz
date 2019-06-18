@@ -17,9 +17,6 @@ export class QuizService {
   public incorrectQues: number = 0;
   public score: number = 0;
   constructor(private http: HttpClient, private formBuilder: FormBuilder) {
-    this.optionFormGroup = this.formBuilder.group({
-      optionsArray: this.formBuilder.array([])
-    });
   }
 
   createOptions(): FormGroup {
@@ -39,7 +36,10 @@ export class QuizService {
     }
   }
 
-  public buildOptionForm(){
+  public buildOptionForm() {
+    this.optionFormGroup = this.formBuilder.group({
+      optionsArray: this.formBuilder.array([])
+    });
     for (var i = 0; i < this.totalQuestion; i++) {
       (<FormArray>this.optionFormGroup.get('optionsArray')).push(this.createOptions());
     }

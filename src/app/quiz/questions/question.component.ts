@@ -14,16 +14,19 @@ export class QuestionComponent implements OnInit {
 
   public questions: QuestionVM[];
   public questionIndex: number = 0;
-  public totalQuestion: number = 3;
+  public totalQuestion: number = 5;
   public optionFormGroup: FormGroup;
   @Output() valueChange = new EventEmitter();
   @Input() topic: string;
   ngOnInit() {
     this.quizService.getQuestionData(this.topic).subscribe((questionsData: QuestionVM[]) => {
-      this.questions = questionsData;
-      this.totalQuestion = questionsData.length;
+      this.questions = [];
       this.quizService.totalQuestion = this.totalQuestion;
-      this.quizService.questions = questionsData;
+      for(let i=0;i<this.totalQuestion;i++){
+        this.questions.push(questionsData[this.getRandomQuestion(questionsData.length-1)]);
+      }
+      console.log(JSON.stringify(this.questions));
+      this.quizService.questions = this.questions;
       // console.log(this.questions);
       this.quizService.buildOptionForm();
       this.optionFormGroup = this.quizService.optionFormGroup;
@@ -45,6 +48,9 @@ export class QuestionComponent implements OnInit {
     this.valueChange.emit("changed");
   }
 
+  public getRandomQuestion(max: number) : number {
+    return Math.floor(Math.random() * (max - 0 + 1));
+  }
 }
 
 export interface QuestionVM {
