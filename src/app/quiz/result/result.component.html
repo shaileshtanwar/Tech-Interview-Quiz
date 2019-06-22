@@ -16,8 +16,6 @@ correct Questions : {{correctQues}}
     <br>
     <div [formGroup]="optionFormGroup">
       <div formArrayName="optionsArray" *ngFor="let option of optionFormGroup.get('optionsArray').controls; let y = index;">
-        <!--  -->
-        {{option}}
         <div [formGroupName]="y" *ngIf="i==y">
           <!-- <div *ngFor="let option of question.options; let j=index"> -->
           <mat-checkbox *ngIf="!!question.options[0].A" formControlName="op1" class="example-margin" disabled>{{question.options[0].A}} {{op1}}

@@ -13,7 +13,6 @@ export class TileComponent implements OnInit {
   ngOnInit() {
     this.tileService.getTileData().subscribe((tileData: TileInfoVM[]) => {
       this.tileInfo = tileData;
-      console.log(this.tileInfo);
     });
   }
 
