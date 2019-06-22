@@ -25,17 +25,13 @@ export class QuestionComponent implements OnInit {
       for(let i=0;i<this.totalQuestion;i++){
         this.questions.push(questionsData[this.getRandomQuestion(questionsData.length-1)]);
       }
-      console.log(JSON.stringify(this.questions));
       this.quizService.questions = this.questions;
-      // console.log(this.questions);
       this.quizService.buildOptionForm();
       this.optionFormGroup = this.quizService.optionFormGroup;
     });
   }
   public submitQuiz(): void {
-    // console.log(JSON.stringify(this.optionFormGroup.value));
     this.quizService.optionFormGroup = this.optionFormGroup;
-    // console.log(JSON.stringify(this.quizService.optionFormGroup.value));
     this.router.navigate(['/review']);
   }
 

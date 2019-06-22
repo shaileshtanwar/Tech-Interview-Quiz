@@ -38,7 +38,6 @@ export class ReviewComponent implements OnInit {
         this.quizService.incorrectQues++;
       }
     }
-    console.log(this.quizService.correctQues + " " + this.quizService.incorrectQues + " ")
     this.router.navigate(['/result']);
   }
 }
