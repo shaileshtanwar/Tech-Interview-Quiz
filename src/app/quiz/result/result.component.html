@@ -1,7 +1,51 @@
 <p>
   result works!
 </p>
+correct Questions : {{correctQues}}
+<br/> incorrect Questions: {{incorrectQues}}
+<br/> Score: {{score}}
+<br/> Please Review Your answers:
+<div class="card bg-info text-white" *ngFor="let question of questions; let i=index">
+  <div class="container">
+    <h4>
+      <b>Question {{i + 1}}</b>
+    </h4>
+    <p>Out of {{totalQuestion}}</p>
+    Q: {{question.question}}
+    <br> Select your answer from options mentioned below:
+    <br>
+    <div [formGroup]="optionFormGroup">
+      <div formArrayName="optionsArray" *ngFor="let option of optionFormGroup.get('optionsArray').controls; let y = index;">
+        <!--  -->
+        {{option}}
+        <div [formGroupName]="y" *ngIf="i==y">
+          <!-- <div *ngFor="let option of question.options; let j=index"> -->
+          <mat-checkbox *ngIf="!!question.options[0].A" formControlName="op1" class="example-margin" disabled>{{question.options[0].A}} {{op1}}
+            <i class="fas fa-check-circle green" *ngIf="quizService.questions[y].answer === 'A' && option.get('op1').value"></i>
+            <i class="fas fa-times-circle red" *ngIf="quizService.questions[y].answer !== 'A' && option.get('op1').value"></i>
+          </mat-checkbox>
+          <br>
+          <mat-checkbox *ngIf="!!question.options[1].B" formControlName="op2" class="example-margin" disabled>{{question.options[1].B}}
+            <i class="fas fa-check-circle green" *ngIf="quizService.questions[y].answer === 'B' && option.get('op2').value"></i>
+            <i class="fas fa-times-circle red" *ngIf="quizService.questions[y].answer !== 'B' && option.get('op2').value"></i>
+          </mat-checkbox>
 
-correct Questions : {{correctQues}} <br/>
-incorrect Questions: {{incorrectQues}} <br/>
-Score: {{score}} <br/>
+          <br>
+          <mat-checkbox *ngIf="!!question.options[2].C" formControlName="op3" class="example-margin" disabled>{{question.options[2].C}}
+            <i class="fas fa-check-circle green" *ngIf="quizService.questions[y].answer === 'C' && option.get('op3').value"></i>
+            <i class="fas fa-times-circle red" *ngIf="quizService.questions[y].answer !== 'C' && option.get('op3').value"></i>
+          </mat-checkbox>
+          <br>
+          <mat-checkbox *ngIf="!!question.options[3].D" formControlName="op4" class="example-margin" disabled>{{question.options[3].D}}
+            <i class="fas fa-check-circle green" *ngIf="quizService.questions[y].answer === 'D' && option.get('op4').value"></i>
+            <i class="fas fa-times-circle red" *ngIf="quizService.questions[y].answer !== 'D' && option.get('op4').value"></i>
+          </mat-checkbox>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <button *ngIf="i < totalQuestion-1" mat-raised-button class="next-button" color="warn" (click)="nextQuestion()">Next</button> -->
+</div>
+
+<button mat-raised-button class="next-button" color="warn" [routerLink]="['/']">Go Back to Home Page</button>

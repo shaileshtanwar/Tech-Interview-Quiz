@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/quiz/quiz.service';
 import { FormArray, FormGroup } from '@angular/forms';
+import { QuestionVM } from 'src/app/quiz/questions/question.component';
 
 @Component({
   selector: 'app-result',
@@ -14,12 +15,18 @@ export class ResultComponent implements OnInit {
   public correctQues: number = 0;
   public incorrectQues: number = 0;
   public score: number = 0;
-
+  public questions: QuestionVM[];
+  public questionIndex: number = 0;
+  public totalQuestion: number = 3;
+  public optionFormGroup: FormGroup;
   ngOnInit() {
     this.quizService.score = 0;
     this.quizService.incorrectQues = 0;
     this.quizService.correctQues = 0;
     this.calculateResult(this.quizService.optionFormGroup);
+    this.questions = this.quizService.questions;
+    this.optionFormGroup = this.quizService.optionFormGroup;
+    this.totalQuestion = this.quizService.totalQuestion;
   }
 
   public calculateResult(fromGroup: FormGroup): void {
